@@ -25,22 +25,32 @@ pyenv install 3.5.2
 pyenv local 3.5.2
 python --version | grep "Python 3.5.2"
 if [ "$?" -eq 0 ]
-    ;
+then
+    :
 else
     echo "pythonのバージョンが3.5.2ではありません"
     exit 1
+fi
 
 pip install --upgrade pip
+
 if [ "$?" -eq 0 ]
-    ;
+then
+    :
 else
     echo "pipのインストールが失敗しました"
     exit 1
+fi
+
 pip install Django
+
 if [ "$?" -eq 0 ]
-    ;
+then
+    :
 else
     echo "Djangoのインストールが失敗しました。"
     exit 1
+fi
+
 echo "引き続き、Djangoチュートリアルのプロジェクトを作成するから進めてください"
 echo "https://docs.djangoproject.com/ja/1.10/intro/tutorial01/#creating-a-project"
